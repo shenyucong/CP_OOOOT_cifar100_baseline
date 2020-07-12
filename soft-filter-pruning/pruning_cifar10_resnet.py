@@ -125,7 +125,7 @@ def main():
     net = models.__dict__[args.arch](num_classes)
     print_log("=> network :\n {}".format(net), log)
 
-    #net = torch.nn.DataParallel(net, device_ids=list(range(args.ngpu)))
+    net = torch.nn.DataParallel(net, device_ids=list(range(args.ngpu)))
 
 
 
