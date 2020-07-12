@@ -2,20 +2,20 @@
 ## ResNet 56
 First step,
 ```
-python main.py --dataset cifar100 --arch resnet --depth 56 --save ./log/pretrian/resnet56
+CUDA_VISIBLE_DEVICES=$GPU_ID$ python main.py --dataset cifar100 --arch resnet --depth 56 --save ./log/pretrian/resnet56
 ```
 Then pruning and get test accuracy,
 ```
-python res56prune.py --dataset cifar100 -v A --model ./log/pretrain/resnet56 --save ./log/pruned/resnet56
+CUDA_VISIBLE_DEVICES=$GPU_ID$ python res56prune.py --dataset cifar100 -v A --model ./log/pretrain/resnet56 --save ./log/pruned/resnet56
 ```
 
 ## ResNet 110
 ```
-python main.py --dataset cifar100 --arch resnet --depth 110 --save ./log/pretrian/resnet110
+CUDA_VISIBLE_DEVICES=$GPU_ID$ python main.py --dataset cifar100 --arch resnet --depth 110 --save ./log/pretrian/resnet110
 ```
 Then pruning and get test accuracy,
 ```
-python res110prune.py --dataset cifar100 -v A --model ./log/pretrain/resnet110 --save ./log/pruned/resnet110
+CUDA_VISIBLE_DEVICES=$GPU_ID$ python res110prune.py --dataset cifar100 -v A --model ./log/pretrain/resnet110 --save ./log/pruned/resnet110
 ```
 
 
