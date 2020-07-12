@@ -1,3 +1,25 @@
+# PFEC cifar 100 baseline
+## ResNet 56
+First step,
+```
+python main.py --dataset cifar100 --arch resnet --depth 56 --save ./log/pretrian/resnet56
+```
+Then pruning and get test accuracy,
+```
+python res56prune.py --dataset cifar100 -v A --model ./log/pretrain/resnet56 --save ./log/pruned/resnet56
+```
+
+## ResNet 110
+```
+python main.py --dataset cifar100 --arch resnet --depth 110 --save ./log/pretrian/resnet110
+```
+Then pruning and get test accuracy,
+```
+python res110prune.py --dataset cifar100 -v A --model ./log/pretrain/resnet110 --save ./log/pruned/resnet110
+```
+
+
+
 # Pruning Filters For Efficient ConvNets
 
 This directory contains a pytorch re-implementation of all CIFAR experiments of the following paper  
