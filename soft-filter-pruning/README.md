@@ -1,3 +1,34 @@
+# Cifar 100 baseline
+For ResNet-56:
+```
+CUDA_VISIBLE_DEVICES=$GPU_ID$ python pruning_cifar10_resnet.py  ./data/cifar.python --dataset cifar100 --arch resnet56 \
+--save_path ./logs/cifar10_resnet110_norm2_0_324_3_rate0.7 \
+--epochs 200 \
+--schedule 1 60 120 160 \
+--gammas 10 0.2 0.2 0.2 \
+--learning_rate 0.01 --decay 0.0005 --batch_size 128 \
+--rate 0.4 \
+--layer_begin 0  --layer_end 164 --layer_inter 3 --epoch_prune 1
+```
+
+For ResNet-110:
+```
+CUDA_VISIBLE_DEVICES=$GPU_ID$ python pruning_cifar10_resnet.py  ./data/cifar.python --dataset cifar100 --arch resnet110 \
+--save_path ./logs/cifar10_resnet110_norm2_0_324_3_rate0.7 \
+--epochs 200 \
+--schedule 1 60 120 160 \
+--gammas 10 0.2 0.2 0.2 \
+--learning_rate 0.01 --decay 0.0005 --batch_size 128 \
+--rate 0.4 \
+--layer_begin 0  --layer_end 324 --layer_inter 3 --epoch_prune 1
+```
+
+
+
+
+
+
+
 # Soft Filter Pruning for Accelerating Deep Convolutional Neural Networks
 The PyTorch implementation for [our IJCAI 2018 paper](https://www.ijcai.org/proceedings/2018/0309.pdf).
 This implementation is based on [ResNeXt-DenseNet](https://github.com/D-X-Y/ResNeXt-DenseNet).
